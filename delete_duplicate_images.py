@@ -16,7 +16,7 @@ for index, filename in enumerate(os.listdir('.')):  #listdir('.') = current dire
         with open(filename, 'rb') as f:
             filehash = hashlib.md5(f.read()).hexdigest()
         if filehash not in hash_keys: 
-            hash_keys[filehash] = index
+            hash_keys[index] = filehash
         else:
             duplicates.append((index,hash_keys[filehash]))
 
